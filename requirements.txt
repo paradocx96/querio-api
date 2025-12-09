@@ -5,7 +5,7 @@ langchain-text-splitters==0.3.5
 langchain-huggingface==0.1.2
 
 # Vector Store and Embeddings
-chromadb==0.5.23
+langchain-chroma==0.1.4
 sentence-transformers==3.3.1
 
 # PDF Processing
@@ -16,3 +16,16 @@ python-dotenv==1.0.1
 
 # Google Generative AI
 google-generativeai==0.8.3
+
+# FastAPI and Web Server
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.5
+pydantic-settings==2.7.1
+
+# CORS and middleware
+fastapi-cors==0.0.6
+
+# SSE for streaming
+sse-starlette==2.2.1

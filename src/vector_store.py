@@ -1,7 +1,6 @@
 import os
 
-import chromadb
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 
@@ -19,20 +18,9 @@ def create_vectorstore(chunks, persist_dir):
             model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
-        # Create ChromaDB client with telemetry disabled
-        client_settings = chromadb.config.Settings(
-            anonymized_telemetry=False,
-            allow_reset=True
-        )
-        client = chromadb.PersistentClient(
-            path=persist_dir,
-            settings=client_settings
-        )
-
         vectordb = Chroma.from_documents(
             documents=documents,
             embedding=embedding_model,
-            client=client,
             persist_directory=persist_dir
         )
 
