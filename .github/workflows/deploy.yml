@@ -3,8 +3,8 @@ name: Build and Deploy to EC2
 on:
   push:
     branches:
-      - deploy  # Trigger on push to deploy branch
-  workflow_dispatch:  # Allow manual trigger
+      - deploy
+  workflow_dispatch:
 
 env:
   DOCKER_IMAGE: paradocx96/querio-api
@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-push:
-    name: Build Docker Image and Push to Docker Hub
+    name: Build Image and Push to Docker Hub
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +37,7 @@ jobs:
           tags: |
             type=ref,event=branch
             type=sha,prefix={{branch}}-
-            type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=latest,enable=true
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
