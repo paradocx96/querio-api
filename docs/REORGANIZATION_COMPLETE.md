@@ -229,7 +229,7 @@ ls -la scripts/
 
 ```bash
 # 1. SSH to EC2
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 
 # 2. Download deployment script
 curl -O https://raw.githubusercontent.com/paradocx96/querio-api/main/scripts/deploy.sh
@@ -303,7 +303,7 @@ Ensure all documentation cross-references use correct paths.
 ## Quick Reference
 
 ### Current Configuration
-- **Server IP:** 13.213.3.90
+- **Server IP:** 3.0.98.108
 - **Repository:** github.com/paradocx96/querio-api
 - **Main Branch:** main
 

@@ -14,7 +14,7 @@ Complete guide to enable HTTPS/SSL for your Querio API on AWS EC2.
 
 ### Requirements
 - Own domain name (e.g., yourdomain.com)
-- Domain DNS pointed to EC2 IP: 13.213.3.90
+- Domain DNS pointed to EC2 IP: 3.0.98.108
 
 ---
 
@@ -25,7 +25,7 @@ In your domain registrar's DNS settings, add an A record:
 ```
 Type: A
 Name: api (or @ for root domain)
-Value: 13.213.3.90
+Value: 3.0.98.108
 TTL: 3600
 ```
 
@@ -39,7 +39,7 @@ Test DNS:
 ```bash
 # From your computer
 nslookup api.yourdomain.com
-# Should return: 13.213.3.90
+# Should return: 3.0.98.108
 ```
 
 ---
@@ -48,7 +48,7 @@ nslookup api.yourdomain.com
 
 SSH into your EC2:
 ```bash
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 cd ~/querio
 ```
 
@@ -169,7 +169,7 @@ You'll be asked for:
 - State: Singapore
 - City: Singapore
 - Organization: Your Company
-- Common Name: 13.213.3.90
+- Common Name: 3.0.98.108
 - Email: your@email.com
 
 ### Update Nginx for Self-Signed Certificate
@@ -183,7 +183,7 @@ Add HTTPS server block:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name 13.213.3.90;
+    server_name 3.0.98.108;
 
     ssl_certificate /etc/nginx/ssl/querio.crt;
     ssl_certificate_key /etc/nginx/ssl/querio.key;
@@ -214,7 +214,7 @@ server {
 # Redirect HTTP to HTTPS
 server {
     listen 80;
-    server_name 13.213.3.90;
+    server_name 3.0.98.108;
     return 301 https://$server_name$request_uri;
 }
 ```
@@ -227,7 +227,7 @@ sudo systemctl reload nginx
 
 Access:
 ```
-https://13.213.3.90/docs
+https://3.0.98.108/docs
 ```
 
 **Note**: Browser will show "Not Secure" warning. Click "Advanced" → "Proceed".
@@ -330,7 +330,7 @@ server {
 
 ### Current Setup (Before SSL)
 Your current nginx config works with HTTP:
-- http://13.213.3.90/docs
+- http://3.0.98.108/docs
 
 ### After SSL Setup (With Domain)
 Your API will be accessible via:
@@ -546,7 +546,7 @@ sudo certbot delete --cert-name api.yourdomain.com
 
 ## My Recommendation for You
 
-Since you have EC2 IP: **13.213.3.90**
+Since you have EC2 IP: **3.0.98.108**
 
 ### Best Option:
 1. **Get a cheap domain** ($10-15/year from Namecheap)
@@ -561,7 +561,7 @@ Since you have EC2 IP: **13.213.3.90**
 
 ### Quick Setup:
 1. Buy domain on Namecheap
-2. Add A record: `@` → `13.213.3.90`
+2. Add A record: `@` → `3.0.98.108`
 3. Wait 5-30 minutes
 4. Run: `sudo certbot --nginx -d yourdomain.com`
 5. Done! 🔒

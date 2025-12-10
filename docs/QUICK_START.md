@@ -25,7 +25,7 @@ That's it! The script will:
 ### Step 1: Connect to EC2
 
 ```bash
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 ```
 
 ### Step 2: Download and Run Deploy Script
@@ -54,7 +54,7 @@ The script will guide you through:
 
 Visit in your browser:
 ```
-http://13.213.3.90/docs
+http://3.0.98.108/docs
 ```
 
 ---
@@ -123,7 +123,7 @@ For those who want the absolute minimum:
 
 ```bash
 # SSH to EC2
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 
 # Run quick deploy
 bash <(curl -s https://raw.githubusercontent.com/paradocx96/querio-api/main/quick-deploy.sh)
@@ -136,7 +136,7 @@ bash <(curl -s https://raw.githubusercontent.com/paradocx96/querio-api/main/quic
 ### Test Health Endpoint
 
 ```bash
-curl http://13.213.3.90/api/health
+curl http://3.0.98.108/api/health
 ```
 
 Expected response:
@@ -150,8 +150,8 @@ Expected response:
 ### Access API Documentation
 
 Open in browser:
-- **Swagger UI**: http://13.213.3.90/docs
-- **ReDoc**: http://13.213.3.90/redoc
+- **Swagger UI**: http://3.0.98.108/docs
+- **ReDoc**: http://3.0.98.108/redoc
 
 ---
 
@@ -341,7 +341,7 @@ Here's a complete example from start to finish:
 
 ```bash
 # 1. SSH to EC2
-ssh -i my-key.pem ubuntu@13.213.3.90
+ssh -i my-key.pem ubuntu@3.0.98.108
 
 # 2. Download and run deploy script
 curl -O https://raw.githubusercontent.com/paradocx96/querio-api/main/deploy.sh
@@ -357,10 +357,10 @@ chmod +x deploy.sh
 # 4. Wait for deployment (2-5 minutes)
 
 # 5. Test
-curl http://13.213.3.90/api/health
+curl http://3.0.98.108/api/health
 
 # 6. Open browser
-#    http://13.213.3.90/docs
+#    http://3.0.98.108/docs
 
 # Done! 🎉
 ```

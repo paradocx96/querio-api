@@ -8,7 +8,7 @@ This directory contains the Nginx reverse proxy configuration for the Querio API
 **Purpose**: Unified production configuration (HTTP + HTTPS ready)
 
 **Features:**
-- **HTTP Support**: Works out of the box with IP address (13.213.3.90)
+- **HTTP Support**: Works out of the box with IP address (3.0.98.108)
 - **HTTPS Ready**: Commented sections for SSL/HTTPS (enable when needed)
 - **Reverse Proxy**: Forwards requests to FastAPI on port 8000
 - **Large File Uploads**: Supports up to 50MB (configurable)
@@ -36,7 +36,7 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-**Access:** http://13.213.3.90/
+**Access:** http://3.0.98.108/
 
 **Upgrade to HTTPS (with domain):**
 ```bash
@@ -58,12 +58,12 @@ sudo nginx -t && sudo systemctl reload nginx
 ### Server Name
 Current configuration uses:
 ```nginx
-server_name 13.213.3.90;
+server_name 3.0.98.108;
 ```
 
 **To use a custom domain:**
 1. Update `server_name` to your domain
-2. Point DNS A record to 13.213.3.90
+2. Point DNS A record to 3.0.98.108
 3. Run `./scripts/setup-https.sh` for SSL
 
 ### Upload Size

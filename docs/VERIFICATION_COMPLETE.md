@@ -44,7 +44,7 @@ nginx/
 
 ### Active (HTTP)
 - ✅ Port 80 listening
-- ✅ Server name: 13.213.3.90
+- ✅ Server name: 3.0.98.108
 - ✅ Reverse proxy to port 8000
 - ✅ 50MB upload size
 - ✅ Health check optimization
@@ -96,7 +96,7 @@ sudo ln -s /etc/nginx/sites-available/querio /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
 
-# Access: http://13.213.3.90/docs
+# Access: http://3.0.98.108/docs
 ```
 
 ### Upgrade to HTTPS

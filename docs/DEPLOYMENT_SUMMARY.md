@@ -46,7 +46,7 @@ All deployment files and scripts for AWS EC2 deployment.
    - Unified Nginx reverse proxy configuration
    - HTTP configuration (active by default)
    - HTTPS configuration (commented, ready to enable)
-   - Configured for IP: 13.213.3.90
+   - Configured for IP: 3.0.98.108
    - Security headers included
    - Let's Encrypt ACME challenge support
 
@@ -146,20 +146,20 @@ After deploying:
 ## 🌐 Your Current Configuration
 
 ### Server Details
-- **IP Address**: 13.213.3.90
+- **IP Address**: 3.0.98.108
 - **Region**: ap-southeast-1 (Singapore)
 - **Instance**: t2.micro
 - **OS**: Ubuntu 22.04 LTS
 
 ### Nginx Configuration
 - **File**: nginx/nginx-querio.conf
-- **Server Name**: 13.213.3.90
+- **Server Name**: 3.0.98.108
 - **Type**: Unified HTTP/HTTPS (HTTPS commented out)
 - **Configured**: ✅ Yes
 
 ### Current Access URLs
-- **With Nginx**: http://13.213.3.90/docs
-- **Direct**: http://13.213.3.90:8000/docs
+- **With Nginx**: http://3.0.98.108/docs
+- **Direct**: http://3.0.98.108:8000/docs
 
 ---
 
@@ -371,7 +371,7 @@ docker-compose up -d --build
 ## 🎯 Next Steps After Deployment
 
 1. **Test Your API**
-   - Visit http://13.213.3.90/docs
+   - Visit http://3.0.98.108/docs
    - Upload a test PDF
    - Try the query endpoint
 
@@ -407,7 +407,7 @@ git commit -m "Your changes"
 git push
 
 # 2. On EC2, pull and rebuild
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 cd ~/querio
 git pull
 docker-compose up -d --build
@@ -429,7 +429,7 @@ curl http://localhost/api/health
 **Ready to deploy?**
 
 ```bash
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 curl -O https://raw.githubusercontent.com/paradocx96/querio-api/main/deploy.sh
 chmod +x deploy.sh
 ./deploy.sh

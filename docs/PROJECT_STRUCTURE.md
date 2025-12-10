@@ -264,7 +264,7 @@ python app.py
 ### Production Deployment
 ```bash
 # 1. SSH to server
-ssh -i your-key.pem ubuntu@13.213.3.90
+ssh -i your-key.pem ubuntu@3.0.98.108
 
 # 2. Run deployment script
 curl -O https://raw.githubusercontent.com/paradocx96/querio-api/main/scripts/deploy.sh
@@ -359,7 +359,7 @@ jobs:
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
-          host: 13.213.3.90
+          host: 3.0.98.108
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
