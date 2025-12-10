@@ -1,6 +1,6 @@
-# Querio - RAG API
-
 <div align="center">
+
+# Querio - RAG API
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115.6-009688.svg)
@@ -794,15 +794,13 @@ This project was inspired by the need for a production-ready RAG API that could 
 - 💡 Request features via [GitHub Discussions](https://github.com/paradocx96/querio/discussions)
 - 📧 General inquiries: navindadev@gmail.com
 
-### Star History
-
-If you find this project helpful, please consider giving it a ⭐ on GitHub!
-
 ---
 
 <div align="center">
 
-**Made with ❤️ by developers, for developers**
+### ⭐ Star us on GitHub if you find this project useful!
+
+**Built with ❤️ by paradocx96**
 
 [⬆ Back to Top](#querio---rag-api)
 
