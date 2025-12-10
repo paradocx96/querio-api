@@ -69,7 +69,7 @@ fi
 # Update nginx configuration with domain
 echo ""
 echo "Updating nginx configuration..."
-NGINX_CONF="/etc/nginx/sites-available/querio"
+NGINX_CONF="/etc/nginx/sites-available/querio-api"
 
 if [ -f "$NGINX_CONF" ]; then
     # Backup current config

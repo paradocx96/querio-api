@@ -24,14 +24,14 @@ if ! command -v docker &> /dev/null || ! command -v docker-compose &> /dev/null;
 fi
 
 # Clone or update repository
-if [ -d "$HOME/querio" ]; then
+if [ -d "$HOME/querio-api" ]; then
     echo "Updating existing installation..."
-    cd "$HOME/querio"
+    cd "$HOME/querio-api"
     git pull
 else
     echo "Cloning repository..."
-    git clone https://github.com/paradocx96/querio-api.git "$HOME/querio"
-    cd "$HOME/querio"
+    git clone https://github.com/paradocx96/querio-api.git "$HOME/querio-api"
+    cd "$HOME/querio-api"
 fi
 
 # Configure environment
@@ -52,9 +52,9 @@ if command -v nginx &> /dev/null; then
     echo ""
     read -p "Setup Nginx? (y/n): " -r SETUP
     if [ "$SETUP" = "y" ]; then
-        sudo cp nginx/nginx-querio.conf /etc/nginx/sites-available/querio
+        sudo cp nginx/nginx-querio.conf /etc/nginx/sites-available/querio-api
         sudo rm -f /etc/nginx/sites-enabled/default
-        sudo ln -sf /etc/nginx/sites-available/querio /etc/nginx/sites-enabled/
+        sudo ln -sf /etc/nginx/sites-available/querio-api /etc/nginx/sites-enabled/
         sudo nginx -t && sudo systemctl restart nginx
         echo "✓ Nginx configured"
     fi

@@ -14,8 +14,8 @@ NC='\033[0m' # No Color
 
 # Configuration
 REPO_URL="https://github.com/paradocx96/querio-api.git"
-PROJECT_DIR="$HOME/querio"
-NGINX_CONF="/etc/nginx/sites-available/querio"
+PROJECT_DIR="$HOME/querio-api"
+NGINX_CONF="/etc/nginx/sites-available/querio-api"
 
 echo ""
 echo "================================================"
@@ -235,7 +235,7 @@ if command_exists nginx; then
             fi
 
             # Create symbolic link
-            sudo ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/querio
+            sudo ln -sf "$NGINX_CONF" /etc/nginx/sites-enabled/querio-api
             print_success "Nginx site enabled"
 
             # Test nginx configuration
