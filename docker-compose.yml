@@ -4,7 +4,7 @@ services:
   querio-api:
     # Use Docker Hub image in production, build locally for development
     image: paradocx96/querio-api:latest
-    build: .
+    # build: .
     container_name: querio-api
     ports:
       - "8000:8000"
